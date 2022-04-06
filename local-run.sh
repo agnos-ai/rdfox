@@ -9,4 +9,4 @@ fi
 
 ./local-build.sh || exit $?
 
-docker run --rm --interactive --env RDFOX_LICENSE_BASE64="${RDFOX_LICENSE_BASE64:-rubbish}" $(< image.id)
+docker run --rm -it --cap-drop ALL --env RDFOX_LICENSE_BASE64="${RDFOX_LICENSE_BASE64:-rubbish}" -v home:/home -p 12110:12110 $(< image.id)
