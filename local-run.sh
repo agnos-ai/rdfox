@@ -9,4 +9,12 @@ fi
 
 ./local-build.sh || exit $?
 
-docker run --rm -it --cap-drop ALL --env RDFOX_LICENSE_BASE64="${RDFOX_LICENSE_BASE64:-rubbish}" -v home:/home -p 12110:12110 $(< image.id)
+# TODO: I need to find out how to leave RDFox running in the background while the rest of the code here continues...& does not work!
+docker run --rm -it --env RDFOX_LICENSE_BASE64="${RDFOX_LICENSE_BASE64:-rubbish}" -p 12110:12110 $(< image.id)
+
+# Give it a moment for the container and RDFox to start up
+sleep 5
+
+# Create data store
+# dstore create LUBM par-complex-nn -persist-df=file -persist-roles=file -init-resource-capacity=1000000 -init-triple-capacity=140000000 auto-update-statistics true
+curl -i -X POST --user admin:admin "localhost:12110/datastores/test-repository?type=par-complex-nn"
