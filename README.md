@@ -24,4 +24,5 @@ Cleaning up the local environment
 
 
 Accessing the image shell
+
 `docker exec -it <imageID> /bin/sh`

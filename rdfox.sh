@@ -14,6 +14,6 @@ exec /opt/RDFox/RDFox \
 -server-directory /home/rdfox/.RDFox \
 -license-file /home/rdfox/RDFox.lic \
 -role admin -password admin \
-shell . "set endpoint.port 12110" "endpoint start"
+shell . "set endpoint.port 12110" "endpoint start" 
 
 
