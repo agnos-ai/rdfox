@@ -10,10 +10,8 @@ fi
 echo "${RDFOX_LICENSE_BASE64}" | base64 -d > /home/rdfox/RDFox.lic
 
 # Start RDFox
-exec /opt/RDFox/RDFox \
--server-directory /home/rdfox/.RDFox \
--license-file /home/rdfox/RDFox.lic \
--role admin -password admin \
-shell . "set endpoint.port 12110" "endpoint start" 
+exec /opt/RDFox/RDFox -server-directory /home/rdfox/.RDFox \
+-license-file /home/rdfox/RDFox.lic -role admin -password admin \
+shell . "set endpoint.port 12110" "endpoint start"
 
 
