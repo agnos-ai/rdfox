@@ -15,7 +15,7 @@ Once you received a RDFox.lic license file from RDFox, the variable above can be
 
 Running the container
 
-`./local-run.sh`
+`./local-run.sh -u "admin" -p "admin" -r "12110" -n "test-repo" -t "par-complex-nn"`
 
 
 Cleaning up the local environment
@@ -33,7 +33,7 @@ I want to save the encoded license and repository user and password somewhere, l
 
 `RDFox:
     image:
-        password: ENC[AES256_GCM,data:WXCNOcrl8C5znTaj9eEi6DCoMkQ=,iv:9p7+1Ese5ODMv+WkEoqa+J5axjxHbIZNsyY/aP35Xz0=,tag:huhPirzrAh308NaqSyXMpw==,type:str]
-        RDFOX_LICENSE_BASE64: inKydjTu5xwyl96iRYk1j87ZcadQWEuGjbQWTYSVl1X0C4DFIEYXLknglhsFmC+X2R0SMueGyPoM50j2COUC8NisfRWCeS7l+G09ilGNW3DBUZCgqOxmCygVEpTAczyW/
+        password: ENC[AES256_GCM,data:WXCNOcr,iv:9p7+1Ese5O,tag:huhPirzrA,type:str]
+        RDFOX_LICENSE_BASE64: inKydjTu5xwyl96iRYk1j87ZcadQWE/
     admin:
-        password: ENC[AES256_GCM,data:YTgGzXY=,iv:A3mKF4LNsHzlml4PIF8cjhjRsVuYNTGbRvVv6dkNhLw=,tag:KrhF/JkwLpxYm6K1AMQIpA==,type:str]`
+        password: ENC[AES256_GCM,data:YTgGzXY=,iv:A3mKF4LN,tag:KrhF/JkwLp,type:str]`

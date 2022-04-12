@@ -1,0 +1,346 @@
+Prefix(owl: = <http://www.w3.org/2002/07/owl#>)
+Prefix(rdf: = <http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(rdfox: = <http://oxfordsemantic.tech/RDFox#>)
+Prefix(rdfs: = <http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(swrl: = <http://www.w3.org/2003/11/swrl#>)
+Prefix(swrlb: = <http://www.w3.org/2003/11/swrlb#>)
+Prefix(xsd: = <http://www.w3.org/2001/XMLSchema#>)
+Ontology(<owl>
+
+DataPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+EquivalentClasses( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Employee> ObjectIntersectionOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksFor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> ) ) )
+
+SubObjectPropertyOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksFor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberOf> )
+
+EquivalentClasses( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Student> ObjectIntersectionOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> ) ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ConferencePaper> ) )
+
+EquivalentClasses( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Chair> ObjectIntersectionOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#headOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department> ) ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssociateProfessor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#listedCourse> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Schedule> )
+
+EquivalentClasses( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Dean> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#headOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#College> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssistantProfessor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Chair> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ClericalStaff> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AdministrativeStaff> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchAssistant> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ConferencePaper> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Article> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Faculty> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Employee> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#FullProfessor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateStudent> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#affiliateOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Institute> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Lecturer> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Faculty> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Manual> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#UndergraduateStudent> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Student> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Faculty> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Employee> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationResearch> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Research> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Work> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchAssistant> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksFor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchGroup> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#mastersDegreeFrom> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchGroup> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Software> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Specification> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+SubObjectPropertyOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#headOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksFor> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Program> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#JournalArticle> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Article> )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#age> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+EquivalentClasses( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Director> ObjectIntersectionOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#headOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Program> ) ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#VisitingProfessor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#headOf> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Lecturer> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#listedCourse> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#UndergraduateStudent> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Dean> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#SystemsStaff> ) )
+
+EquivalentClasses( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#TeachingAssistant> ObjectIntersectionOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingAssistantOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> ) ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#SystemsStaff> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AdministrativeStaff> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AdministrativeStaff> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Employee> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Schedule> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#softwareVersion> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#softwareDocumentation> ) )
+
+SubObjectPropertyOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> )
+
+TransitiveObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf> ) )
+
+SubObjectPropertyOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#mastersDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#College> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksFor> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#College> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Faculty> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Work> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#hasAlumnus> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateCourse> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#orgPublication> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchProject> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#mastersDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#name> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Manual> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateStudent> ObjectSomeValuesFrom( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateCourse> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#softwareDocumentation> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#listedCourse> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#hasAlumnus> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+DataPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#title> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#orgPublication> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Institute> ) )
+
+InverseObjectProperties( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#hasAlumnus> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#softwareVersion> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Software> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#PostDoc> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Faculty> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssistantProfessor> ) )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#UnofficialPublication> ) )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#member> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> )
+
+InverseObjectProperties( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#member> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberOf> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#mastersDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Book> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoralDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Faculty> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#affiliateOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoralDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchProject> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchGroup> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchProject> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Research> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#tenured> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationResearch> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Software> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#affiliateOf> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#member> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#softwareDocumentation> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Software> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateStudent> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#TechnicalReport> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#affiliatedOrganizationOf> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#VisitingProfessor> ) )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationResearch> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Research> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Chair> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ClericalStaff> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#tenured> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Article> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Work> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#TechnicalReport> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Article> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#JournalArticle> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingAssistantOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#TeachingAssistant> )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#title> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssociateProfessor> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#TeachingAssistant> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Director> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Specification> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#AdministrativeStaff> ) )
+
+DataPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#age> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchGroup> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationDate> ) )
+
+SubObjectPropertyOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoralDegreeFrom> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#hasAlumnus> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#University> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Book> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> ) )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingAssistantOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Program> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Research> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#PostDoc> ) )
+
+DataPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#FullProfessor> ) )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchInterest> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#ResearchAssistant> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Student> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationDate> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingAssistantOf> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#UnofficialPublication> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Person> ) )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#orgPublication> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Article> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Publication> )
+
+ObjectPropertyRange( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#affiliatedOrganizationOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+ObjectPropertyDomain( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#affiliatedOrganizationOf> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#GraduateCourse> ) )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#member> ) )
+
+Declaration( Class( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Course> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoralDegreeFrom> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Organization> )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberOf> ) )
+
+Declaration( ObjectProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#degreeFrom> ) )
+
+SubClassOf( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Dean> <http://swat.cse.lehigh.edu/onto/univ-bench.owl#Professor> )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone> ) )
+
+Declaration( DataProperty( <http://swat.cse.lehigh.edu/onto/univ-bench.owl#officeNumber> ) )
+
+)
