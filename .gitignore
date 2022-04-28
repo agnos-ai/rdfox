@@ -1,2 +1,15 @@
 image.id
 home/RDFox.lic
+.DS_Store
+data/all.ttl.bz2
+data/all.ttl.zip
+data/lubm-10-universities-with-bad-triples.nt
+data/lubm-10-universities.nt
+data/lubm-1000-universities.nt
+data/lubm-1000-universities.nt.bz2
+data/lubm-1000-universities.nt.gz
+data/lubm-1000-universities.nt.zip
+data/lubm-1000-universities.ttl
+data/lubm-1000-universities.ttl.bz2
+data/lubm-1000-universities.ttl.gz
+data/lubm-1000-universities.ttl.zip

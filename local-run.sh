@@ -3,10 +3,27 @@
 source ./terminal.sh
 customize_terminal_output
 
+help()
+{
+   # Display Help
+   echo 
+   echo   "Usage:"
+   echo   "   ./local-run.sh [OPTIONS]"
+   echo   "   Starts an RDFox container with an injected license."
+   echo 
+   echo   "Options:"
+   echo   "   -u  User."
+   echo   "   -p  Password."
+   echo   "   -r  HTTP port number."
+   echo   "   -n  Repository name."
+   echo   "   -t  Repository type. Refer to the RDFox documentation for the types available."
+   echo
+}
+
 
 echo "${header}Set and validate input parameters${reset}"
 
-while getopts ":u:p:r:n:t:" opt; do
+while getopts ":u:p:r:n:t:h:" opt; do
   case $opt in
     u) user="$OPTARG"
     ;;
@@ -17,6 +34,8 @@ while getopts ":u:p:r:n:t:" opt; do
     n) repositoryname="$OPTARG"
     ;;
     t) repositorytype="$OPTARG"
+    ;;
+    h) help
     ;;
     \?) echo "Invalid option -$OPTARG" >&2
     exit 1
@@ -33,31 +52,37 @@ done
 
 if [[ -z "${user}" ]] ; then
   echo "${error}ERROR${reset}: User is a mandatory paramenter."
+  help
   exit 1
 fi
 
 if [[ -z "${password}" ]] ; then
   echo "${error}ERROR${reset}: Password is a mandatory paramenter."
+  help
   exit 1
 fi
 
 if [[ -z "${port}" ]] ; then
   echo "${error}ERROR${reset}: Port is a mandatory paramenter."
+  help
   exit 1
 fi
 
 if [[ -z "${repositoryname}" ]] ; then
   echo "${error}ERROR${reset}: Repository name is a mandatory paramenter."
+  help
   exit 1
 fi
 
 if [[ -z "${repositorytype}" ]] ; then
   echo "${error}ERROR${reset}: Repository type is a mandatory paramenter."
+  help
   exit 1
 fi
 
 if [[ -z "${RDFOX_LICENSE_BASE64}" ]] ; then
   echo "ERROR: Create an environment variable RDFOX_LICENSE_BASE64 that has the base64 encoded content of your RDFox license"
+  help()
   exit 1
 fi
 

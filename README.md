@@ -15,6 +15,12 @@ Once you received a RDFox.lic license file from RDFox, the variable above can be
 
 Running the container
 
+For usage and options:
+
+`./local-run.sh -h"`
+
+Example:
+
 `./local-run.sh -u "admin" -p "admin" -r "12110" -n "test-repo" -t "par-complex-nn"`
 
 
@@ -28,12 +34,12 @@ Accessing the image shell
 `docker exec -it <imageID> /bin/sh`
 
 
-TODO:
+<!-- TODO:
 I want to save the encoded license and repository user and password somewhere, like a yaml file example below. 
 
-`RDFox:
+RDFox:
     image:
         password: ENC[AES256_GCM,data:WXCNOcr,iv:9p7+1Ese5O,tag:huhPirzrA,type:str]
         RDFOX_LICENSE_BASE64: inKydjTu5xwyl96iRYk1j87ZcadQWE/
     admin:
-        password: ENC[AES256_GCM,data:YTgGzXY=,iv:A3mKF4LN,tag:KrhF/JkwLp,type:str]`
+        password: ENC[AES256_GCM,data:YTgGzXY=,iv:A3mKF4LN,tag:KrhF/JkwLp,type:str]` -->
