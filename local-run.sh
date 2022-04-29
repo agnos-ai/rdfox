@@ -142,14 +142,14 @@ curl -X POST -G \
  
 echo "${header}Import LUBM Rules${reset}"
 curl -X POST -G \
---data-urlencode "default-graph-name=http://swat.cse.lehigh.edu/onto/univ-bench.owl#rules" \
+--data-urlencode "default-graph-name=http://swat.cse.lehigh.edu/onto/univ-bench.owl#ontology" \
 --user "${user}":"${password}" -H "Content-Type:" -T "rules/rule2.dlog" \
-"localhost:${port}/datastores/${repositoryname}/content" 
+"localhost:${port}/datastores/${repositoryname}/content"
 
 curl -X POST -G \
---data-urlencode "default-graph-name=http://swat.cse.lehigh.edu/onto/univ-bench.owl#rules" \
+--data-urlencode "default-graph-name=http://swat.cse.lehigh.edu/onto/univ-bench.owl#ontology" \
 --user "${user}":"${password}" -H "Content-Type:" -T "rules/rule9.dlog" \
-"localhost:${port}/datastores/${repositoryname}/content" 
+"localhost:${port}/datastores/${repositoryname}/content"
 
 
 # TODO: remaining tasks here...
@@ -157,6 +157,6 @@ curl -X POST -G \
 # -persist-roles=file -init-resource-capacity=1000000 
 # -init-triple-capacity=140000000 auto-update-statistics true
 
-
+echo "${header}******************* THE END *******************${reset}"
 
 
