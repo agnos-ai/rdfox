@@ -103,10 +103,37 @@ while [ ${test} != 0 ]; do
 done
 
 
+# Grant full access to all downloaded data files and ontologies, rules and queries.
+chmod -R u+rwx data
+chmod -R u+rwx ontology
+chmod -R u+rwx rules
+chmod -R u+rwx queries
+# ls -al data
+# ls -al ontology
+
+
 # Include the Northwind Sample Data Store for Demos
 echo "${header}Set up Nothwind sample data store${reset}"
-curl -X POST --user "${user}":"${password}" "localhost:${port}/datastores/Northwind?type=par-complex-nn"
-curl -X POST --user "${user}":"${password}" "localhost:${port}/datastores/Northwind/content" -H "Content-Type:" -T "data/dumpdataNTRIPLE7.nt"
+
+# Create the Northwind repository
+curl -X POST \
+--user "${user}":"${password}" "localhost:${port}/datastores/Northwind?type=par-complex-nn"
+
+# Import the data into the dataGraph
+curl -X POST -G \
+--data-urlencode "default-graph-name=http://www.mysparql.com/resource/northwind/dataGraph" \
+--user "${user}":"${password}" "localhost:${port}/datastores/Northwind/content" -H "Content-Type:" -T "data/dumpdataNTRIPLE7.nt"
+
+# Import the rules 
+curl -X POST -G \
+--data-urlencode "default-graph-name=http://www.mysparql.com/resource/northwind/dataGraph" \
+--user "${user}":"${password}" -H "Content-Type:" -T "rules/nwrule1.dlog" "localhost:12110/datastores/Northwind/content"
+
+
+# curl -X POST --user admin:admin -H "Content-Type:" -T "rules/nwrule1.dlog" "localhost:12110/datastores/Northwind/content"
+
+# curl PATCH --user "${user}":"${password}" -H "Content-Type:" "localhost:${port}/datastores/Northwind/content?operation=add-axioms&source-graph-name=dataGraph&destination-graph-name=axiomGraph"
+# curl PATCH --user "admin":"admin" "localhost:12110/datastores/Northwind/content?operation=add-axioms&source-graph-name=#data&destination-graph-name=axiomGraph"
 
 
 echo "${header}List Repositories${reset}"
@@ -117,13 +144,6 @@ echo "${header}Download LUBM Test Datasets${reset}"
 # Download the test dataset from gcloud
 # TODO: Automate authentication, which is currently done via browser login.
 gsutil -o GSUtil:parallel_process_count=1 rsync -r gs://lubm-benchmark ./data
-
-
-# Grant full access to all downloaded data files and ontologies
-chmod -R u+rwx data
-chmod -R u+rwx ontology
-# ls -al data
-# ls -al ontology
 
 
 echo "${header}Import Data${reset}"
