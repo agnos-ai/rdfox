@@ -15,13 +15,7 @@ Once you received a RDFox.lic license file from RDFox, the variable above can be
 
 Running the container
 
-For usage and options:
-
-`./local-run.sh -h"`
-
-Example:
-
-`./local-run.sh -u "admin" -p "admin" -r "12110" -n "test-repo" -t "par-complex-nn"`
+`./local-run.sh -u "admin" -p "admin" -n "LUBM" `
 
 
 Cleaning up the local environment

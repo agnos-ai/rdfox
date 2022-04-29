@@ -1,0 +1,13 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .
+
+[?student, a, ub:Type9],
+[?student, ub:hasFaculty, ?faculty],
+[?student, ub:hasCourse, ?course]
+:-
+[?student, a, ub:Student],
+[?faculty, a, ub:Faculty],
+[?course, a, ub:Course],
+[?student, ub:advisor, ?faculty],
+[?faculty, ub:teacherOf, ?course],
+[?student, ub:takesCourse, ?course] .
