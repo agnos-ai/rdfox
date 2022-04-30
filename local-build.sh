@@ -2,7 +2,7 @@
 
 _IMAGE_NAME="docker.io/agnosai/rdfox"
 _IMAGE_VERSION="latest"
-_MANUALLY_INCREMENTED_IMAGE_VERSION="5.4"
+_MANUALLY_INCREMENTED_IMAGE_VERSION="5.5"
 
 docker build . \
   --iidfile=image.id \
